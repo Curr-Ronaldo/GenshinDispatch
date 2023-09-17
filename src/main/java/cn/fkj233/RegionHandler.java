@@ -5,6 +5,7 @@ import cn.fkj233.proto.QueryCurrRegionHttpRspOuterClass.QueryCurrRegionHttpRsp;
 import cn.fkj233.proto.QueryRegionListHttpRspOuterClass.QueryRegionListHttpRsp;
 import cn.fkj233.proto.RegionInfoOuterClass.RegionInfo;
 import cn.fkj233.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo;
+import cn.fkj233.proto.ResVersionConfigOuterClass;
 import cn.fkj233.proto.StopServerInfoOuterClass.StopServerInfo;
 import cn.fkj233.proto.ForceUpdateInfoOuterClass.ForceUpdateInfo;
 import com.google.protobuf.ByteString;
@@ -103,17 +104,100 @@ public final class RegionHandler implements Router {
                 .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
                 .build();
         QueryCurrRegionHttpRsp.Builder updatedQuery = QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(regionInfo);
-        if (region.Run && version != null && region.VersionCheck != null) {
-            String versionCode = version.replaceAll(Pattern.compile("[a-zA-Z]").pattern(), "");
-            String needVersionCode = region.VersionCheck.Version.replaceAll(Pattern.compile("[a-zA-Z]").pattern(), "");
-            if (!versionCode.equals(needVersionCode)) {
-                updatedQuery
-                        .setRetcode(20)
-                        .setMsg(region.VersionCheck.Msg)
-                        .setForceUdpate(ForceUpdateInfo.newBuilder()
-                                .setForceUpdateUrl(region.VersionCheck.Url)
-                                .build()
-                        );
+        if (region.Run && version != null) {
+            String versionCode = version;
+            //logger.info(versionCode);
+            switch (versionCode) {
+                case "CNRELWin3.4.0":
+                    updatedQuery
+                            .setRetcode(0)
+                            .setRegionInfo(RegionInfo.newBuilder()
+                                    .setGateserverIp(region.Ip)
+                                    .setGateserverPort(region.Port)
+                                    .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+                                    .setDataUrlBak("3.4_live")
+                                    .setResourceUrlBak("3.4_live")
+                                    .setDataUrl("https://update.vme50.icu/client_design_data/3.4_live")
+                                    .setResourceUrl("https://update.vme50.icu/client_game_res/3.4_live")
+                                    .setClientDataVersion(13021296)
+                                    .setClientSilenceDataVersion(12901190)
+                                    .setClientVersionSuffix("8f79734b55")
+                                    .setClientSilenceVersionSuffix("326dbbbf65")
+                                    .setClientDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"1eeeff672e899799d05b721c33781d5f\", \"fileSize\": 5147}")
+                                    .setClientSilenceDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"59bd72d68bdc13d7269339c1765f8b86\", \"fileSize\": 410}")
+                                    .setResVersionConfig(ResVersionConfigOuterClass.ResVersionConfig.newBuilder()
+                                            .setRelogin(false)
+                                            .setVersion(12875869)
+                                            .setVersionSuffix("b9da23cec2")
+                                            .setBranch("3.4_live")
+                                            .setReleaseTotalSize("0")
+                                            .setMd5("""
+                                                    {\"remoteName\": \"res_versions_external\", \"md5\": \"9cb4f3667ee8105e212cbfa7990acb5c\", \"fileSize\": 788001}\r\n{\"remoteName\": \"res_versions_medium\", \"md5\": \"fbe87049c76cba5e63c9e0e026e6c041\", \"fileSize\": 318424}\r\n{\"remoteName\": \"res_versions_streaming\", \"md5\": \"404d2a3935fcae3017039032d590f272\", \"fileSize\": 78791}\r\n{\"remoteName\": \"release_res_versions_external\", \"md5\": \"8473b82893952f4544c67eb6e8fe6832\", \"fileSize\": 788001}\r\n{\"remoteName\": \"release_res_versions_medium\", \"md5\": \"bab1f2be82928c972a111e40568c1f51\", \"fileSize\": 318424}\r\n{\"remoteName\": \"release_res_versions_streaming\", \"md5\": \"f04f7977bc87779b823ce19a60771287\", \"fileSize\": 78791}\r\n{\"remoteName\": \"base_revision\", \"md5\": \"af0f241d9f231b2d3230e8f707a0c321\", \"fileSize\": 19}
+                                                    """)
+                                            .build())
+                                    .build())
+                            .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED));
+                    break;
+                case "OSRELiOS3.4.0":
+                    updatedQuery
+                            .setRetcode(0)
+                            .setRegionInfo(RegionInfo.newBuilder()
+                                    .setGateserverIp(region.Ip)
+                                    .setGateserverPort(region.Port)
+                                    .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+                                    .setDataUrlBak("3.4_live")
+                                    .setResourceUrlBak("3.4_live")
+                                    .setDataUrl("https://update.vme50.icu/client_design_data/3.4_live")
+                                    .setResourceUrl("https://update.vme50.icu/client_game_res/3.4_live")
+                                    .setClientDataVersion(13021296)
+                                    .setClientSilenceDataVersion(12901190)
+                                    .setClientVersionSuffix("8f79734b55")
+                                    .setClientSilenceVersionSuffix("326dbbbf65")
+                                    .setClientDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"1eeeff672e899799d05b721c33781d5f\", \"fileSize\": 5147}")
+                                    .setClientSilenceDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"59bd72d68bdc13d7269339c1765f8b86\", \"fileSize\": 410}")
+                                    .setResVersionConfig(ResVersionConfigOuterClass.ResVersionConfig.newBuilder()
+                                            .setRelogin(false)
+                                            .setVersion(12875869)
+                                            .setVersionSuffix("b9da23cec2")
+                                            .setBranch("3.4_live")
+                                            .setReleaseTotalSize("0")
+                                            .setMd5("""
+                                                    {\"remoteName\": \"res_versions_external\", \"md5\": \"e38e728250f20ae84cf5d475d2c3778a\", \"fileSize\": 383340}\r\n{\"remoteName\": \"res_versions_medium\", \"md5\": \"558b841d70f4c3e1c74fbf6dc30f0702\", \"fileSize\": 99746}\r\n{\"remoteName\": \"res_versions_streaming\", \"md5\": \"13153fbeb959e252e2734bae6dd7ca56\", \"fileSize\": 29539}\r\n{\"remoteName\": \"release_res_versions_external\", \"md5\": \"d6d72bccfc602a9ec3c2a2b591b0f753\", \"fileSize\": 383340}\r\n{\"remoteName\": \"release_res_versions_medium\", \"md5\": \"8383d854d05e557f34a30d58ec0381b2\", \"fileSize\": 99746}\r\n{\"remoteName\": \"release_res_versions_streaming\", \"md5\": \"776b1100e085a2a5f16cb1576e9fdead\", \"fileSize\": 29539}\r\n{\"remoteName\": \"base_revision\", \"md5\": \"af0f241d9f231b2d3230e8f707a0c321\", \"fileSize\": 19}
+                                                    """)
+                                            .build())
+                                    .build())
+                            .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED));
+                    break;
+                case "OSRELAndroid3.4.0":
+                    updatedQuery
+                            .setRetcode(0)
+                            .setRegionInfo(RegionInfo.newBuilder()
+                                    .setGateserverIp(region.Ip)
+                                    .setGateserverPort(region.Port)
+                                    .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+                                    .setDataUrlBak("3.4_live")
+                                    .setResourceUrlBak("3.4_live")
+                                    .setDataUrl("https://update.vme50.icu/client_design_data/3.4_live")
+                                    .setResourceUrl("https://update.vme50.icu/client_game_res/3.4_live")
+                                    .setClientDataVersion(13021296)
+                                    .setClientSilenceDataVersion(12901190)
+                                    .setClientVersionSuffix("8f79734b55")
+                                    .setClientSilenceVersionSuffix("326dbbbf65")
+                                    .setClientDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"1eeeff672e899799d05b721c33781d5f\", \"fileSize\": 5147}")
+                                    .setClientSilenceDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"59bd72d68bdc13d7269339c1765f8b86\", \"fileSize\": 410}")
+                                    .setResVersionConfig(ResVersionConfigOuterClass.ResVersionConfig.newBuilder()
+                                            .setRelogin(false)
+                                            .setVersion(12875869)
+                                            .setVersionSuffix("b9da23cec2")
+                                            .setBranch("3.4_live")
+                                            .setReleaseTotalSize("0")
+                                            .setMd5("""
+                                                    {\"remoteName\": \"res_versions_external\", \"md5\": \"8dfb9e5a33ba557929826248acb4170a\", \"fileSize\": 401244}\r\n{\"remoteName\": \"res_versions_medium\", \"md5\": \"78f6a919f3d11ab1de866dbbfa85f81c\", \"fileSize\": 95660}\r\n{\"remoteName\": \"res_versions_streaming\", \"md5\": \"da868422a159d4bd163effaedd275783\", \"fileSize\": 2215}\r\n{\"remoteName\": \"release_res_versions_external\", \"md5\": \"02da756f10f83380f5be0026ddd0b33b\", \"fileSize\": 401247}\r\n{\"remoteName\": \"release_res_versions_medium\", \"md5\": \"b5c7164922e73aedd4b7ce87e6fe5f5b\", \"fileSize\": 95660}\r\n{\"remoteName\": \"release_res_versions_streaming\", \"md5\": \"04b13f69ddc53afd2c9dc5f43230b919\", \"fileSize\": 2215}\r\n{\"remoteName\": \"base_revision\", \"md5\": \"af0f241d9f231b2d3230e8f707a0c321\", \"fileSize\": 19}
+                                                    """)
+                                            .build())
+                                    .build())
+                            .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED));
+                    break;
             }
         } else {
             try {
