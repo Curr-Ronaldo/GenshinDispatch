@@ -104,6 +104,7 @@ public final class RegionHandler implements Router {
                 .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
                 .build();
         QueryCurrRegionHttpRsp.Builder updatedQuery = QueryCurrRegionHttpRsp.newBuilder().setRegionInfo(regionInfo);
+        byte[] customConfig = "{\"sdkenv\":\"2\",\"checkdevice\":\"false\",\"loadPatch\":\"false\",\"showexception\":\"false\",\"regionConfig\":\"pm|fk|add\",\"downloadMode\":\"0\"}".getBytes();
         if (region.Run && version != null) {
             String versionCode = version;
             //logger.info(versionCode);
@@ -136,6 +137,7 @@ public final class RegionHandler implements Router {
                                                     """)
                                             .build())
                                     .build())
+                            .setRegionCustomConfigEncrypted(ByteString.copyFrom(customConfig))
                             .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED));
                     break;
                 case "OSRELiOS3.4.0":
@@ -166,6 +168,7 @@ public final class RegionHandler implements Router {
                                                     """)
                                             .build())
                                     .build())
+                            .setRegionCustomConfigEncrypted(ByteString.copyFrom(customConfig))
                             .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED));
                     break;
                 case "OSRELAndroid3.4.0":
@@ -196,6 +199,7 @@ public final class RegionHandler implements Router {
                                                     """)
                                             .build())
                                     .build())
+                            .setRegionCustomConfigEncrypted(ByteString.copyFrom(customConfig))
                             .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED));
                     break;
             }
@@ -260,7 +264,7 @@ public final class RegionHandler implements Router {
 
                 String key_id = ctx.queryParam("key_id");
                 Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
-                cipher.init(Cipher.ENCRYPT_MODE, Objects.equals(key_id, "3") ? Crypto.CUR_OS_ENCRYPT_KEY : Crypto.CUR_CN_ENCRYPT_KEY);
+                cipher.init(Cipher.ENCRYPT_MODE, Objects.equals(key_id, "5") ? Crypto.CUR_OS_ENCRYPT_KEY : Crypto.CUR_CN_ENCRYPT_KEY);
 
                 //Encrypt regionInfo in chunks
                 ByteArrayOutputStream encryptedRegionInfoStream = new ByteArrayOutputStream();
