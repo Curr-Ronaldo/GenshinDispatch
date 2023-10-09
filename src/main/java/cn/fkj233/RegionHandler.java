@@ -118,8 +118,8 @@ public final class RegionHandler implements Router {
                                     .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
                                     .setDataUrlBak("3.4_live")
                                     .setResourceUrlBak("3.4_live")
-                                    .setDataUrl("https://update.vme50.icu/client_design_data/3.4_live")
-                                    .setResourceUrl("https://update.vme50.icu/client_game_res/3.4_live")
+                                    .setDataUrl("http://out.coure.cn/client_design_data/3.4_live")
+                                    .setResourceUrl("http://out.coure.cn/client_game_res/3.4_live")
                                     .setClientDataVersion(13021296)
                                     .setClientSilenceDataVersion(12901190)
                                     .setClientVersionSuffix("8f79734b55")
@@ -128,12 +128,12 @@ public final class RegionHandler implements Router {
                                     .setClientSilenceDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"59bd72d68bdc13d7269339c1765f8b86\", \"fileSize\": 410}")
                                     .setResVersionConfig(ResVersionConfigOuterClass.ResVersionConfig.newBuilder()
                                             .setRelogin(false)
-                                            .setVersion(12875869)
-                                            .setVersionSuffix("b9da23cec2")
+                                            .setVersion(12591909)
+                                            .setVersionSuffix("58182dc06f")
                                             .setBranch("3.4_live")
                                             .setReleaseTotalSize("0")
                                             .setMd5("""
-                                                    {\"remoteName\": \"res_versions_external\", \"md5\": \"9cb4f3667ee8105e212cbfa7990acb5c\", \"fileSize\": 788001}\r\n{\"remoteName\": \"res_versions_medium\", \"md5\": \"fbe87049c76cba5e63c9e0e026e6c041\", \"fileSize\": 318424}\r\n{\"remoteName\": \"res_versions_streaming\", \"md5\": \"404d2a3935fcae3017039032d590f272\", \"fileSize\": 78791}\r\n{\"remoteName\": \"release_res_versions_external\", \"md5\": \"8473b82893952f4544c67eb6e8fe6832\", \"fileSize\": 788001}\r\n{\"remoteName\": \"release_res_versions_medium\", \"md5\": \"bab1f2be82928c972a111e40568c1f51\", \"fileSize\": 318424}\r\n{\"remoteName\": \"release_res_versions_streaming\", \"md5\": \"f04f7977bc87779b823ce19a60771287\", \"fileSize\": 78791}\r\n{\"remoteName\": \"base_revision\", \"md5\": \"af0f241d9f231b2d3230e8f707a0c321\", \"fileSize\": 19}
+                                                    {\"remoteName\": \"res_versions_external\", \"md5\": \"2b6a84f0a36e1d7624ea2e2d96d51b9a\", \"fileSize\": 809789}\r\n{\"remoteName\": \"res_versions_medium\", \"md5\": \"a929eb9155bacfd404c09c1916e6177e\", \"fileSize\": 328148}\r\n{\"remoteName\": \"res_versions_streaming\", \"md5\": \"8f934c499a9c707fa3f02eb8b01ab642\", \"fileSize\": 78927}\r\n{\"remoteName\": \"release_res_versions_external\", \"md5\": \"7f679c2550072874c65010f47ce0ee55\", \"fileSize\": 809789}\r\n{\"remoteName\": \"release_res_versions_medium\", \"md5\": \"e0a8033e2b30a1c99980ac2fc1ae4afd\", \"fileSize\": 328148}\r\n{\"remoteName\": \"release_res_versions_streaming\", \"md5\": \"4ede994c13a3fdd54cec38032c2cd31d\", \"fileSize\": 78927}\r\n{\"remoteName\": \"base_revision\", \"md5\": \"d41d8cd98f00b204e9800998ecf8427e\", \"fileSize\": 0}
                                                     """)
                                             .build())
                                     .build())
@@ -149,8 +149,8 @@ public final class RegionHandler implements Router {
                                     .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
                                     .setDataUrlBak("3.4_live")
                                     .setResourceUrlBak("3.4_live")
-                                    .setDataUrl("https://update.vme50.icu/client_design_data/3.4_live")
-                                    .setResourceUrl("https://update.vme50.icu/client_game_res/3.4_live")
+                                    .setDataUrl("http://out.coure.cn/client_design_data/3.4_live")
+                                    .setResourceUrl("http://out.coure.cn/client_game_res/3.4_live")
                                     .setClientDataVersion(13021296)
                                     .setClientSilenceDataVersion(12901190)
                                     .setClientVersionSuffix("8f79734b55")
@@ -159,13 +159,14 @@ public final class RegionHandler implements Router {
                                     .setClientSilenceDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"59bd72d68bdc13d7269339c1765f8b86\", \"fileSize\": 410}")
                                     .setResVersionConfig(ResVersionConfigOuterClass.ResVersionConfig.newBuilder()
                                             .setRelogin(false)
-                                            .setVersion(12875869)
-                                            .setVersionSuffix("b9da23cec2")
+                                            .setVersion(12591909)
+                                            .setVersionSuffix("58182dc06f")
                                             .setBranch("3.4_live")
                                             .setReleaseTotalSize("0")
                                             .setMd5("""
-                                                    {\"remoteName\": \"res_versions_external\", \"md5\": \"e38e728250f20ae84cf5d475d2c3778a\", \"fileSize\": 383340}\r\n{\"remoteName\": \"res_versions_medium\", \"md5\": \"558b841d70f4c3e1c74fbf6dc30f0702\", \"fileSize\": 99746}\r\n{\"remoteName\": \"res_versions_streaming\", \"md5\": \"13153fbeb959e252e2734bae6dd7ca56\", \"fileSize\": 29539}\r\n{\"remoteName\": \"release_res_versions_external\", \"md5\": \"d6d72bccfc602a9ec3c2a2b591b0f753\", \"fileSize\": 383340}\r\n{\"remoteName\": \"release_res_versions_medium\", \"md5\": \"8383d854d05e557f34a30d58ec0381b2\", \"fileSize\": 99746}\r\n{\"remoteName\": \"release_res_versions_streaming\", \"md5\": \"776b1100e085a2a5f16cb1576e9fdead\", \"fileSize\": 29539}\r\n{\"remoteName\": \"base_revision\", \"md5\": \"af0f241d9f231b2d3230e8f707a0c321\", \"fileSize\": 19}
-                                                    """)
+                                                {\"remoteName\": \"res_versions_external\", \"md5\": \"89f1405455bfd76984eaa67aa88ae079\", \"fileSize\": 402215}\r\n{\"remoteName\": \"res_versions_medium\", \"md5\": \"e54c06341410a79d0dc8507514381df7\", \"fileSize\": 109447}\r\n{\"remoteName\": \"res_versions_streaming\", \"md5\": \"d7295dd875cbf760af85192f5de3fac2\", \"fileSize\": 29760}\r\n{\"remoteName\": \"release_res_versions_external\", \"md5\": \"1de0240586dbc96cdbab9605f2a09bb6\", \"fileSize\": 402215}\r\n{\"remoteName\": \"release_res_versions_medium\", \"md5\": \"968540dfb2efd3911ec2cac9ba9ffc20\", \"fileSize\": 109447}\r\n{\"remoteName\": \"release_res_versions_streaming\", \"md5\": \"ef5181f5543be84ed2cccd468a4b20e1\", \"fileSize\": 29760}\r\n{\"remoteName\": \"base_revision\", \"md5\": \"d41d8cd98f00b204e9800998ecf8427e\", \"fileSize\": 0}
+                                                """)
+
                                             .build())
                                     .build())
                             .setRegionCustomConfigEncrypted(ByteString.copyFrom(customConfig))
@@ -180,8 +181,8 @@ public final class RegionHandler implements Router {
                                     .setSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
                                     .setDataUrlBak("3.4_live")
                                     .setResourceUrlBak("3.4_live")
-                                    .setDataUrl("https://update.vme50.icu/client_design_data/3.4_live")
-                                    .setResourceUrl("https://update.vme50.icu/client_game_res/3.4_live")
+                                    .setDataUrl("http://out.coure.cn/client_design_data/3.4_live")
+                                    .setResourceUrl("http://out.coure.cn/client_game_res/3.4_live")
                                     .setClientDataVersion(13021296)
                                     .setClientSilenceDataVersion(12901190)
                                     .setClientVersionSuffix("8f79734b55")
@@ -190,12 +191,12 @@ public final class RegionHandler implements Router {
                                     .setClientSilenceDataMd5("{\"remoteName\": \"data_versions\", \"md5\": \"59bd72d68bdc13d7269339c1765f8b86\", \"fileSize\": 410}")
                                     .setResVersionConfig(ResVersionConfigOuterClass.ResVersionConfig.newBuilder()
                                             .setRelogin(false)
-                                            .setVersion(12875869)
-                                            .setVersionSuffix("b9da23cec2")
+                                            .setVersion(12591909)
+                                            .setVersionSuffix("58182dc06f")
                                             .setBranch("3.4_live")
                                             .setReleaseTotalSize("0")
                                             .setMd5("""
-                                                    {\"remoteName\": \"res_versions_external\", \"md5\": \"8dfb9e5a33ba557929826248acb4170a\", \"fileSize\": 401244}\r\n{\"remoteName\": \"res_versions_medium\", \"md5\": \"78f6a919f3d11ab1de866dbbfa85f81c\", \"fileSize\": 95660}\r\n{\"remoteName\": \"res_versions_streaming\", \"md5\": \"da868422a159d4bd163effaedd275783\", \"fileSize\": 2215}\r\n{\"remoteName\": \"release_res_versions_external\", \"md5\": \"02da756f10f83380f5be0026ddd0b33b\", \"fileSize\": 401247}\r\n{\"remoteName\": \"release_res_versions_medium\", \"md5\": \"b5c7164922e73aedd4b7ce87e6fe5f5b\", \"fileSize\": 95660}\r\n{\"remoteName\": \"release_res_versions_streaming\", \"md5\": \"04b13f69ddc53afd2c9dc5f43230b919\", \"fileSize\": 2215}\r\n{\"remoteName\": \"base_revision\", \"md5\": \"af0f241d9f231b2d3230e8f707a0c321\", \"fileSize\": 19}
+                                                    {\"remoteName\": \"res_versions_external\", \"md5\": \"1ec457f029cd36a01e5bfd57daf7cf6d\", \"fileSize\": 408267}\r\n{\"remoteName\": \"res_versions_medium\", \"md5\": \"65579c93b2b35c4f5ba784137976e8a0\", \"fileSize\": 97504}\r\n{\"remoteName\": \"res_versions_streaming\", \"md5\": \"703dfabb7630d666c8305f469afe4114\", \"fileSize\": 2402}\r\n{\"remoteName\": \"release_res_versions_external\", \"md5\": \"2ade8cdb33c14d5774ae28640798e4ad\", \"fileSize\": 408267}\r\n{\"remoteName\": \"release_res_versions_medium\", \"md5\": \"b1a0edc7e7b18ca4d4dfa8bee586bf5b\", \"fileSize\": 97504}\r\n{\"remoteName\": \"release_res_versions_streaming\", \"md5\": \"6b45265d8e929e32b3ddce80fb4ab8e9\", \"fileSize\": 2402}\r\n{\"remoteName\": \"base_revision\", \"md5\": \"d41d8cd98f00b204e9800998ecf8427e\", \"fileSize\": 0}
                                                     """)
                                             .build())
                                     .build())
